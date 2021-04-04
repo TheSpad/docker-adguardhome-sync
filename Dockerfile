@@ -12,7 +12,8 @@ RUN \
   go version && \
   echo "*** Installing AdGuardHome Sync ***" && \
   go get -u github.com/bakito/adguardhome-sync && \
-  apk del --no-network git
+  apk del --no-network git && \
+  go clean -cache -modcache
 COPY /root /
 
 EXPOSE 8080
