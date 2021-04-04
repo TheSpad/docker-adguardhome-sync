@@ -11,8 +11,8 @@ RUN \
   apk --update --no-cache add go git && \
   go version && \
   echo "*** Installing AdGuardHome Sync ***" && \
-  go get -u github.com/bakito/adguardhome-sync
-
+  go get -u github.com/bakito/adguardhome-sync && \
+  apk del --no-network git
 COPY /root /
 
 EXPOSE 8080
