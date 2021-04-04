@@ -1,6 +1,6 @@
 We bring you another container release featuring:
 
- * regular and timely application updates
+ * Regular and timely application updates
 
 # [thespad/adguardhome-sync](https://github.com/thespad/docker-adguardhome-sync)
 
@@ -71,6 +71,7 @@ Container images are configured using parameters passed at runtime (such as thos
 
 ## Application Setup
 
+Place config file into /config before starting container
 Web API is accessible at http://SERVERIP:PORT
 More info at [AdGuardHome sync](https://github.com/bakito/adguardhome-sync).
 
