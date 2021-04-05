@@ -48,6 +48,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/New_York
+      - CONFIGFILE= #optional
     volumes:
       - </path/to/appdata/config>:/config
     ports:
@@ -63,6 +64,7 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=America/New_York \
+  -e CONFIGFILE=
   -p 8080:8080 \
   -v </path/to/appdata/config>:/config \
   --restart unless-stopped \
@@ -79,6 +81,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=America/New_York` | Specify a timezone to use EG America/New_York |
+| `-e CONFIGFILE=` | Specify a custom config filename and path |
 | `-v /config` | Contains all relevant configuration files. |
 
 ## Environment variables from files (Docker secrets)
