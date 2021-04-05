@@ -9,15 +9,14 @@ ENV \
 
 RUN \
   mkdir -p /app && \
-  apk --update --no-cache add go git upx && \
+  apk --update --no-cache add go git && \
   echo "*** Installing AdGuardHome Sync ***" && \
   go get -u github.com/bakito/adguardhome-sync && \
   cd /app/go/bin && \
-  upx -qqq adguardhome-sync && \
   cp adguardhome-sync /app && \
   echo "*** Cleaning Up ***" && \
   go clean -cache -modcache && \
-  apk del git go upx && \
+  apk del git go && \
   rm -rf /app/go && \
   rm -rf /app/.cache
 COPY /root /
